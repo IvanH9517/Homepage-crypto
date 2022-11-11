@@ -1,0 +1,142 @@
+@use "components";
+
+@mixin section-display{
+    width: 100%;
+    max-width: 75rem;
+    padding: 3rem;
+    margin: auto;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #ddd;
+}
+
+.logo img{
+    max-width: 5rem;
+    max-height: 3rem;
+}
+
+.sec-home{
+    @include section-display();
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .home-cta{
+        width: 40%;
+        margin-right: 10rem;
+        .cta-text{
+            color: components.$color-main;
+        }
+    }
+    .home-title{
+        width: 28rem;
+        font-size: 3.5rem;
+    }
+    .home-description{
+        width: 30rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding-top: 1.3rem
+    }
+}
+
+.sec-features{
+    @include section-display();
+    display: flex;
+    flex-direction: column;
+    .intro{
+        text-align: center;
+        padding-bottom: 2.5rem;
+        h3{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 0.8rem;
+            color: #888;
+        }
+    }
+    .features{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .img{
+            height: 35rem;
+        }
+    }
+}
+
+.sec-benefits{
+    padding-top: 1rem;
+    border-top: 0.8px solid #ddd;
+    @extend .sec-features, .intro;
+}
+
+.sec-kpis{
+    background-color: components.$color-main;
+    color: white;
+    padding: 4rem;
+    width: 100%;
+    margin: 0;
+    .kpi{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .number{
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+        .desc{
+            font-size: 0.9rem;
+            color: #ffffffaa;
+        }
+    }
+}
+
+.sec-onboarding{
+    @extend .sec-features, .intro;
+    .intro{
+        border-top: none;
+        
+    }
+    .steps{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 60rem;
+        gap: 2.5rem;
+        .step-separator{
+            flex: 1;
+            border-top: 1px solid #ddd;
+        }
+    }
+}
+
+.sec-footer-cta{
+    background-color: components.$color-footer;
+    padding: 5rem;
+    background-image: url(../assets/img/footer.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    .footer-cta{
+        width: 50%;
+        .tittle{
+            font-size: 2rem;
+        }
+        .cta-description{
+            font-size: 1.1rem;
+        }
+    }
+}
